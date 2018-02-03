@@ -19,7 +19,8 @@ from rest_framework import routers
 from corridas import views
 
 router = routers.DefaultRouter()
-router.register(r'test', views.UserViewSet, 'test')
+router.register(r'passageiro', views.passageiroView, 'passageiro')
+router.register(r'motorista', views.motoristaView, 'motorista')
 
 
 urlpatterns = [

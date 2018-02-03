@@ -13,16 +13,7 @@ from rest_framework.response import Response
 
 
 
-class crewQuestions(APIView):
-    permission_classes = ()
-    authentication_classes = ()
-    renderer_classes = (JSONRenderer,)
-
-    def get(self, request, format=None):
-        return Response({}, status = status.HTTP_200_OK)
-
-
-class UserViewSet(viewsets.ModelViewSet):
+class passageiroView(viewsets.ModelViewSet):
     """
     API endpoint that allows users to be viewed or edited.
     """
@@ -34,7 +25,26 @@ class UserViewSet(viewsets.ModelViewSet):
 
 
     def create(self, request):
-        print 'entrou certo'
+        print 'entrou certo passageiro'
+        return Response({}, status = status.HTTP_200_OK)
+
+    def retrieve(self, request, pk=None):
+        print str(pk) + 'aqui'
+        return Response({}, status = status.HTTP_200_OK)
+
+
+class motoristaView(viewsets.ModelViewSet):
+    """
+    API endpoint that allows users to be viewed or edited.
+    """
+    renderer_classes = (JSONRenderer,)
+
+    def list(self, request):
+        return Response({}, status = status.HTTP_200_OK)
+
+
+    def create(self, request):
+        print 'entrou certo motorista'
         return Response({}, status = status.HTTP_200_OK)
 
     def retrieve(self, request, pk=None):
