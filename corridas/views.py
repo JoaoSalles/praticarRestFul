@@ -44,6 +44,8 @@ class motoristaView(viewsets.ModelViewSet):
 
 
     def create(self, request):
+        data = request.data
+        print str(data)
         print 'entrou certo motorista'
         return Response({}, status = status.HTTP_200_OK)
 
