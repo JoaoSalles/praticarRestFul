@@ -21,7 +21,7 @@ from corridas import views
 router = routers.DefaultRouter()
 router.register(r'passageiro', views.passageiroView, 'passageiro')
 router.register(r'motorista', views.motoristaView, 'motorista')
-
+router.register(r'corrida', views.corridaView, 'corrida')
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
