@@ -91,7 +91,7 @@ WSGI_APPLICATION = 'projeto.wsgi.application'
 
 DATABASES = {
         'default': {
-        'ENGINE': 'tenant_schemas.postgresql_backend', # Add 'postgresql_psycopg2', 'mysql', 'sqlite3' or 'oracle'.
+        'ENGINE': 'django.db.backends.postgresql_psycopg2', # Add 'postgresql_psycopg2', 'mysql', 'sqlite3' or 'oracle'.
         'NAME': os.environ['DB_NAME'],                      # Or path to database file if using sqlite3.
         'USER': os.environ['DB_USER'],                      # Not used with sqlite3.
         'PASSWORD': os.environ['DB_PASS'],                  # Not used with sqlite3.
