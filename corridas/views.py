@@ -9,6 +9,7 @@ from rest_framework import viewsets
 from rest_framework import status
 from rest_framework.response import Response
 from datetime import datetime
+from rest_framework.decorators import detail_route, list_route
 from models import *
 
 # Create your views here.
@@ -107,6 +108,14 @@ class motoristaView(viewsets.ModelViewSet):
             # Motorista ja cadastrado
             result["code"] = 1
             return Response(result, status = status.HTTP_200_OK)
+        result["success"] = True
+        return Response(result, status = status.HTTP_200_OK)
+
+    def update(self, request, pk=None):
+        result = {}
+        result["success"] = False
+        newStatus = request.data['status']
+        Motorista.objects.filter(cpf = pk).update(status = newStatus)
         result["success"] = True
         return Response(result, status = status.HTTP_200_OK)
 
